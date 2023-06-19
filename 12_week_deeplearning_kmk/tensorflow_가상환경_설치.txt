@@ -1,0 +1,60 @@
+< 사전 작업 >
+
+1. 파이썬 설치 (예: 3.9버전을 설치했다는 가정)
+
+
+< 가상환경 생성하기>
+ * 디렉토리 위치 무관
+ 
+1-1. 가상환경 설치
+ - 윈도우 > 아나콘다 > 아나콘다 프롬프트 콘솔
+conda인 경우 >conda create -n all_env python=3.9
+ 
+ - 윈도우 > cmd 
+일반인 경우 > py -3.8 - m venv all_env
+
+
+2. 가상환경 목록 확인하기
+conda인 경우 > conda env list
+
+3. 가상환경 삭제하기
+conda인 경우 > conda env remove -n sejong_ml
+일반인 경우 > all_env폴더 삭제
+
+4. 가상환경으로 들어가기 : 활성화시킨다고 칭함
+conda인 경우 > conda activate all_env 
+일반인 경우 > all_env\Scripts\activate
+
+5. 가상환경 빠저나가기 : 비활성화 시키기
+conda인 경우 > conda deactivate
+일반인 경우 > deactivate
+
+
+< 라이브러리 설치 >
+
+ * 가상환경에 접속해서 라이브러리를 설치할 것
+ 가상환경> pip install ipython matplotlib pandas scikit-learn xlrd seaborn
+ 가상환경> pip install openpyxl
+ 가상환경> pip install jupyter notebook ipykernel lab
+
+* 텐서플로우 설치 (python 3.9버젼 기준)
+* 텐서플로우(케라스) 설치 주의사항
+ - 텐서플로우 설치 이후에는 numpy는 가급적 별도 설치하시면 텐서가 안될 수 있음
+ - 다른 버전 업데이트도 가급적 하시면 타 라이브러리 버전 충돌이 잘남
+
+ 가상환경> pip install tensorflow==2.8.2 
+ 가상환경> pip install chardet
+ 가상환경> pip install keras_preprocessing
+ 가상환경> conda install pydot graphviz
+
+
+< 커널 생성 및 연결 >
+
+ 가상환경> python -m ipykernel install --user --name all_env --display-name all_env_kernel
+
+1. 커널 목록 확인하기
+  가상환경> jupyter kernelspec list
+
+2. 커널 삭제하기
+ 가상환경> >jupyter kernelspec uninstall sejong_ml
+
